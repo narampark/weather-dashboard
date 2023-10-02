@@ -21,92 +21,72 @@
         <i class="fas fa-cloud-showers-heavy fa-2x ml-2"></i>
       </div>
     </header>
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              id="cityInput"
-              class="form-control"
-              placeholder="Enter city name"
-            />
-            <div class="input-group-append">
-              <button class="btn btn-primary" id="searchButton">Search</button>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="previousSearchesButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Previous Searches
-            </button>
-            <div
-              class="dropdown-menu"
-              aria-labelledby="previousSearchesButton"
-            ></div>
-          </div>
+    <div class="container">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Enter City" />
+        <button id="search-button">Search</button>
+      </div>
+      <div class="current-weather">
+        <h2 id="city-name">City Name</h2>
+        <p id="date">Date</p>
+        <img id="weather-icon" src="icon.png" alt="Weather Icon" />
+        <p id="temperature">Temperature: °C</p>
+        <p id="humidity">Humidity: %</p>
+        <p id="wind-speed">Wind Speed: m/s</p>
+      </div>
+
+      <div class="future-forecast">
+        <!-- Day 1 Forecast -->
+        <div class="forecast-day">
+          <p class="date">Date 1</p>
+          <img class="w-icon" src="icon1.png" alt="Weather Icon 1" />
+          <p class="temperature">Temperature 1: °C</p>
+          <p class="humidity">Humidity 1: %</p>
+          <p class="wind-speed">Wind Speed 1: m/s</p>
+        </div>
+
+        <!-- Day 2 Forecast -->
+        <div class="forecast-day">
+          <p class="date">Date 2</p>
+          <img class="w-icon" src="icon2.png" alt="Weather Icon 2" />
+          <p class="temperature">Temperature 2: °C</p>
+          <p class="humidity">Humidity 2: %</p>
+          <p class="wind-speed">Wind Speed 2: m/s</p>
+        </div>
+
+        <!-- Repeat this structure for Days 3, 4, and 5 -->
+        <!-- Day 3 Forecast -->
+        <div class="forecast-day">
+          <p class="date">Date 3</p>
+          <img class="w-icon" src="icon3.png" alt="Weather Icon 3" />
+          <p class="temperature">Temperature 3: °C</p>
+          <p class="humidity">Humidity 3: %</p>
+          <p class="wind-speed">Wind Speed 3: m/s</p>
+        </div>
+
+        <!-- Day 4 Forecast -->
+        <div class="forecast-day">
+          <p class="date">Date 4</p>
+          <img class="w-icon" src="icon4.png" alt="Weather Icon 4" />
+          <p class="temperature">Temperature 4: °C</p>
+          <p class="humidity">Humidity 4: %</p>
+          <p class="wind-speed">Wind Speed 4: m/s</p>
+        </div>
+
+        <!-- Day 5 Forecast -->
+        <div class="forecast-day">
+          <p class="date">Date 5</p>
+          <img class="w-icon" src="icon5.png" alt="Weather Icon 5" />
+          <p class="temperature">Temperature 5: °C</p>
+          <p class="humidity">Humidity 5: %</p>
+          <p class="wind-speed">Wind Speed 5: m/s</p>
         </div>
       </div>
     </div>
 
-    <div class="current-weather">
-        <h2 id="cityName"></h2>
-        <p id="currentDate"></p>
-        <i id="weatherIcon" class="fas"></i>
-        <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="windSpeed"></p>
-      </div>
-      <div class="forecast">
-          <!-- Day 1 -->
-          <div class="forecast-day">
-            <p class="forecast-date"></p>
-            <i class="forecast-icon fas"></i>
-            <p class="forecast-temperature"></p>
-            <p class="forecast-wind-speed"></p>
-            <p class="forecast-humidity"></p>
-          </div>
-          <!-- Day 2 -->
-          <div class="forecast-day">
-            <p class="forecast-date"></p>
-            <i class="forecast-icon fas"></i>
-            <p class="forecast-temperature"></p>
-            <p class="forecast-wind-speed"></p>
-            <p class="forecast-humidity"></p>
-          </div>
-          <!-- Day 3 -->
-          <div class="forecast-day">
-            <p class="forecast-date"></p>
-            <i class="forecast-icon fas"></i>
-            <p class="forecast-temperature"></p>
-            <p class="forecast-wind-speed"></p>
-            <p class="forecast-humidity"></p>
-          </div>
-          <!-- Day 4 -->
-          <div class="forecast-day">
-            <p class="forecast-date"></p>
-            <i class="forecast-icon fas"></i>
-            <p class="forecast-temperature"></p>
-            <p class="forecast-wind-speed"></p>
-            <p class="forecast-humidity"></p>
-          </div>
-          <!-- Day 5 -->
-          <div class="forecast-day">
-            <p class="forecast-date"></p>
-            <i class="forecast-icon fas"></i>
-            <p class="forecast-temperature"></p>
-            <p class="forecast-wind-speed"></p>
-            <p class="forecast-humidity"></p>
-          </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>
