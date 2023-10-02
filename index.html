@@ -12,16 +12,99 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-  </head>  
+  </head>
   <body>
     <header class="bg-info text-light p-3">
-        <div class="container d-flex justify-content-center align-items-center">
-            <i class="fas fa-sun fa-2x mr-2"></i>
-            <h1 class="mb-0">Weather Dashboard</h1>
-            <i class="fas fa-cloud-showers-heavy fa-2x ml-2"></i>
-        </div>
+      <div class="container d-flex justify-content-center align-items-center">
+        <i class="fas fa-sun fa-2x mr-2"></i>
+        <h1 class="mb-0">Weather Dashboard</h1>
+        <i class="fas fa-cloud-showers-heavy fa-2x ml-2"></i>
+      </div>
     </header>
-    
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              id="cityInput"
+              class="form-control"
+              placeholder="Enter city name"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-primary" id="searchButton">Search</button>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="previousSearchesButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Previous Searches
+            </button>
+            <div
+              class="dropdown-menu"
+              aria-labelledby="previousSearchesButton"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="current-weather">
+        <h2 id="cityName"></h2>
+        <p id="currentDate"></p>
+        <i id="weatherIcon" class="fas"></i>
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+        <p id="windSpeed"></p>
+      </div>
+      <div class="forecast">
+          <!-- Day 1 -->
+          <div class="forecast-day">
+            <p class="forecast-date"></p>
+            <i class="forecast-icon fas"></i>
+            <p class="forecast-temperature"></p>
+            <p class="forecast-wind-speed"></p>
+            <p class="forecast-humidity"></p>
+          </div>
+          <!-- Day 2 -->
+          <div class="forecast-day">
+            <p class="forecast-date"></p>
+            <i class="forecast-icon fas"></i>
+            <p class="forecast-temperature"></p>
+            <p class="forecast-wind-speed"></p>
+            <p class="forecast-humidity"></p>
+          </div>
+          <!-- Day 3 -->
+          <div class="forecast-day">
+            <p class="forecast-date"></p>
+            <i class="forecast-icon fas"></i>
+            <p class="forecast-temperature"></p>
+            <p class="forecast-wind-speed"></p>
+            <p class="forecast-humidity"></p>
+          </div>
+          <!-- Day 4 -->
+          <div class="forecast-day">
+            <p class="forecast-date"></p>
+            <i class="forecast-icon fas"></i>
+            <p class="forecast-temperature"></p>
+            <p class="forecast-wind-speed"></p>
+            <p class="forecast-humidity"></p>
+          </div>
+          <!-- Day 5 -->
+          <div class="forecast-day">
+            <p class="forecast-date"></p>
+            <i class="forecast-icon fas"></i>
+            <p class="forecast-temperature"></p>
+            <p class="forecast-wind-speed"></p>
+            <p class="forecast-humidity"></p>
+          </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
