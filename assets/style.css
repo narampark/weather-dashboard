@@ -1,42 +1,28 @@
+/* global style */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
-body {
-  margin: 0;
-}
+/* gives some spacing around the text and centers everything into the middle */
 .current-weather {
-  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
   text-align: center;
 }
-
-.current-weather img {
-  max-width: 100px;
-  margin-top: 10px;
-}
-
+/* lets the future forecast show up horizontally */
 .future-forecast {
   display: flex;
-  justify-content: space-between;
-  overflow-x: hidden;
 }
-
+/* gives some spacing around the text and centers everything into the middle */
 .forecast-day {
-  flex: 0 0 calc(20%);
-  background-color: #f5f5f5;
+  width: 20%;
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.forecast-day:last-child {
   margin-right: 0;
   margin-left: 0;
 }
