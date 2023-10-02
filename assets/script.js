@@ -8,16 +8,9 @@ function getCoordinates(city) {
       if (data.coord) {
         const latitude = data.coord.lat;
         const longitude = data.coord.lon;
-        console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
         getCurrentWeather(latitude, longitude);
         getFutureForecast(latitude, longitude);
-      } else {
-        console.error("Unable to retrieve coordinates for the city.");
       }
-    })
-
-    .catch((error) => {
-      console.error("Error fetching data:", error);
     });
 }
 
@@ -34,6 +27,10 @@ function getCurrentWeather(latitude, longitude) {
       const windSpeed = data.wind.speed;
       const icon = data.weather[0].icon;
 
+      const currentDate = new Date();
+      document.getElementById(
+        "date"
+      ).textContent = `Date: ${currentDate.toLocaleString()}`;
       document.getElementById("city-name").textContent = cityName;
       document.getElementById(
         "temperature"
@@ -83,7 +80,46 @@ function getFutureForecast(latitude, longitude) {
     });
 }
 
+function saveToSearchHistory(city) {
+  let searchHistory = localStorage.getItem("searchHistory") || [];
+  if (!Array.isArray(searchHistory)) {
+    searchHistory = JSON.parse(searchHistory);
+  }
+  if (!searchHistory.includes(city)) {
+    searchHistory.push(city);
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+  }
+}
+
+function populateSearchHistory() {
+  const searchHistory = localStorage.getItem("searchHistory");
+  const cityHistoryDropdown = document.getElementById("city-history");
+
+  if (searchHistory) {
+    const searchHistoryArray = JSON.parse(searchHistory);
+    cityHistoryDropdown.innerHTML = "";
+    searchHistoryArray.forEach((city) => {
+      const option = document.createElement("option");
+      option.text = city;
+      option.value = city;
+      cityHistoryDropdown.add(option);
+    });
+  }
+}
+
 document.getElementById("search-button").addEventListener("click", function () {
   const cityInput = document.getElementById("search-input").value;
   getCoordinates(cityInput);
+  saveToSearchHistory(cityInput);
+  populateSearchHistory();
+});
+
+populateSearchHistory();
+
+document.getElementById("city-history").addEventListener("change", function () {
+  const selectedCity = this.value;
+  if (selectedCity) {
+    document.getElementById("search-input").value = selectedCity;
+    getCoordinates(selectedCity);
+  }
 });
